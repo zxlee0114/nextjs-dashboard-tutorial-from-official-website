@@ -1,6 +1,8 @@
 import AcmeLogo from "@/app/ui/acme-logo";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import Link from "next/link";
+import { IMAGES } from "./constants/images";
 
 export default function Page() {
   return (
@@ -29,6 +31,20 @@ export default function Page() {
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
+          <Image
+            src={IMAGES.HERO.DESKTOP}
+            width={1_000} // pixels
+            height={760} // not the rendered size of image, but let actual image understand the aspect ratio
+            className="hidden md:block"
+            alt="Screenshots of the dashboard project showing desktop version"
+          />
+          <Image
+            src={IMAGES.HERO.MOBILE}
+            width={560}
+            height={620}
+            className="block md:hidden"
+            alt="Screenshots of the dashboard project showing mobile version"
+          />
         </div>
       </div>
     </main>
